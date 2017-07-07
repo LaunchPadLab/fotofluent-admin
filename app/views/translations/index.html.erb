@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Foreign spelling</th>
-      <th>Foreign pronunciation</th>
+      <th>Foreign Word</th>
+      <th>Foreign Pronunciation</th>
       <th>Word</th>
       <th>Language</th>
       <th colspan="3"></th>
@@ -16,7 +16,7 @@
   <tbody>
     <% @translations.each do |translation| %>
       <tr>
-        <td><%= translation.foreign_spelling %></td>
+        <td><%= translation.foreign_word %></td>
         <td><%= translation.foreign_pronunciation %></td>
         <td><%= translation.word %></td>
         <td><%= translation.language %></td>

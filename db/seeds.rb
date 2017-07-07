@@ -54,7 +54,7 @@ words.each do |word|
               )
 
   new_word.translations.create!(
-    foreign_spelling: word[:german],
+    foreign_word: word[:german],
     language_id: Language.first.id
   )
 end

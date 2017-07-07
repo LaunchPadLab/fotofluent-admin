@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :language_id %>
-    <%= form.text_field :language_id, id: :translation_language_id %>
+    <%= form.collection_select :language_id, Language.all, :id, :name %>
   </div>
 
   <div class="actions">

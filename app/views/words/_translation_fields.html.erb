@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <%= f.label :foreign_word %>
+  <%= f.text_field :foreign_word %>
+
+  <%= f.label :foreign_pronunciation %>
+  <%= f.text_field :foreign_pronunciation %>
+
+  <%= f.label :language_id %>
+  <%= f.collection_select :language_id, Language.all, :id, :name %>
+
+  <%= f.check_box :_destroy %>
+
+  <%= link_to_remove_association "Remove", f %>
+</div>

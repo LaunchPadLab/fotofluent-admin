@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @word.word %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag @word.image, width: 100 %>
+</p>
+
+<p>
+  <strong>Grouping:</strong>
+  <%= @word.grouping %>
+</p>
+
+<p>
+  <strong>Pronunciation:</strong>
+  <%= @word.pronunciation %>
+</p>
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>

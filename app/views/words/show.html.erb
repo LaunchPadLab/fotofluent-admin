@@ -21,5 +21,24 @@
   <%= @word.pronunciation %>
 </p>
 
+<hr>
+
+<p><strong>Translations</strong></p>
+
+<% @word.translations.each do |translation| %>
+  <table>
+    <tr>
+      <th>Language</th>
+      <th>Word</th>
+      <th>Pronunciation</th>
+    </tr>
+    <tr>
+      <td><%= translation.language.name %></td>
+      <td><%= translation.foreign_word %></td>
+      <td><%= translation.foreign_pronunciation %></td>
+    </tr>
+  </table>
+<% end %>
+
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>

@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Language</th>
+      <th>EN Word</th>
       <th>Foreign Word</th>
       <th>Foreign Pronunciation</th>
-      <th>Word</th>
-      <th>Language</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,10 @@
   <tbody>
     <% @translations.each do |translation| %>
       <tr>
+        <td><%= translation.language.name %></td>
+        <td><%= translation.word.word %></td>
         <td><%= translation.foreign_word %></td>
         <td><%= translation.foreign_pronunciation %></td>
-        <td><%= translation.word %></td>
-        <td><%= translation.language %></td>
         <td><%= link_to 'Show', translation %></td>
         <td><%= link_to 'Edit', edit_translation_path(translation) %></td>
         <td><%= link_to 'Destroy', translation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

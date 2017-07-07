@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Language:</strong>
+  <%= @translation.language.name %>
+</p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @translation.word.word %>
+</p>
+
+<p>
   <strong>Foreign Word:</strong>
   <%= @translation.foreign_word %>
 </p>
@@ -10,15 +20,6 @@
   <%= @translation.foreign_pronunciation %>
 </p>
 
-<p>
-  <strong>Word:</strong>
-  <%= @translation.word %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @translation.language %>
-</p>
 
 <%= link_to 'Edit', edit_translation_path(@translation) %> |
 <%= link_to 'Back', translations_path %>

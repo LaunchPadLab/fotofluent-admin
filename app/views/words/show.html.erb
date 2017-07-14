@@ -8,7 +8,7 @@
 <p>
   <strong>Image:</strong>
   <br>
-  <%= image_tag @word.image, width: 100 %>
+  <%= image_tag 'loading.gif', 'data-src': image_url(@word.image), width: 100 %>
 </p>
 
 <p>

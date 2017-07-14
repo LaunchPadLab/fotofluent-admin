@@ -22,7 +22,7 @@
     <% @words.each do |word| %>
       <tr>
         <td><%= word.word %></td>
-        <td><%= image_tag 'loading.gif', 'data-src': image_url(word.image), width: 100 %></td>
+        <td><%= image_tag 'loading.gif', 'data-src': image_url(word.image), width: 100, class: "lazy-load" %></td>
         <td><%= word.grouping %></td>
         <td><%= word.pronunciation %></td>
         <td><%= link_to 'Show', word %></td>

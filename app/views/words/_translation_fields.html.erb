@@ -1,14 +1,24 @@
 <div class="nested-fields">
-  <%= f.label :foreign_word %>
-  <%= f.text_field :foreign_word %>
+  <div>
+    <%= f.label :foreign_word %>
+    <%= f.text_field :foreign_word %>
 
-  <%= f.label :foreign_pronunciation %>
-  <%= f.text_field :foreign_pronunciation %>
+    <%= f.label :foreign_pronunciation %>
+    <%= f.text_field :foreign_pronunciation %>
 
-  <%= f.label :language_id %>
-  <%= f.collection_select :language_id, Language.all, :id, :name %>
+    <%= f.label :language_id %>
+    <%= f.collection_select :language_id, Language.all, :id, :name %>
+  </div>
+  <br>
 
-  <%= f.check_box :_destroy %>
-
-  <%= link_to_remove_association "Remove", f %>
+  <div>
+    <%= f.check_box :_destroy %>
+    <%= f.label 'Check To Delete Translation' %>
+  </div>
+  <br>
+  
+  <div>
+    <%= link_to_remove_association "Cancel New Translation", f %>
+  </div>
+  <br>
 </div>

@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Words</h1>
+<h1><%= link_to 'Words', words_path %></h1>
 
 <div>
   <h3>Search Words</h3>
   <div>
     <%= form_tag words_path, method: :get do %>
-      <%= text_field_tag 'term', params[:term], placeholder: "Enter word" %>
+      <%= text_field_tag 'term', params[:term], placeholder: "Search for word or grouping" %>
       <%= submit_tag 'Search!' %>
     <% end %>
   </div>
 </div>
+<br>
 
 <div>
   <%= link_to 'New Word', new_word_path %>
+  <%= link_to 'Back to Words', words_path %>
 </div>
 <br>
 

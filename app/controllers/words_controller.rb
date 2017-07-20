@@ -4,7 +4,11 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-    @words = Word.order(id: :desc).page params[:page]
+    if params[:term].present?
+      @words = Word.search_by_word(params[:term]).order(id: :desc).page params[:page]
+    else 
+      @words = Word.order(id: :desc).page params[:page]
+    end
   end
 
   # GET /words/1

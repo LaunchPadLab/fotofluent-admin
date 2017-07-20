@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem "cocoon"
 gem "jquery-rails"
 gem 'kaminari'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

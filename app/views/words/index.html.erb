@@ -3,6 +3,16 @@
 <h1>Words</h1>
 
 <div>
+  <h3>Search Words</h3>
+  <div>
+    <%= form_tag words_path, method: :get do %>
+      <%= text_field_tag 'term', params[:term], placeholder: "Enter word" %>
+      <%= submit_tag 'Search!' %>
+    <% end %>
+  </div>
+</div>
+
+<div>
   <%= link_to 'New Word', new_word_path %>
 </div>
 <br>

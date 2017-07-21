@@ -15,5 +15,11 @@
   <%= @translation.foreign_word %>
 </p>
 
+<p>
+  <strong>Grouping:</strong>
+  <%= @translation.word.grouping %>
+</p>
+
+
 <%= link_to 'Edit', edit_translation_path(@translation) %> |
 <%= link_to 'Back', translations_path %>

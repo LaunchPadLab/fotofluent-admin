@@ -24,12 +24,11 @@
 
 <p><strong>Translations</strong></p>
 
-<% @word.translations.each do |translation| %>
+<% @word.translations.includes(:language).each do |translation| %>
   <table>
     <tr>
       <th>Language</th>
       <th>Word</th>
-      <th>Pronunciation</th>
     </tr>
     <tr>
       <td><%= translation.language.name %></td>

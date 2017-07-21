@@ -3,9 +3,6 @@
     <%= f.label :foreign_word %>
     <%= f.text_field :foreign_word %>
 
-    <%= f.label :foreign_pronunciation %>
-    <%= f.text_field :foreign_pronunciation %>
-
     <%= f.label :language_id %>
     <%= f.collection_select :language_id, Language.all, :id, :name %>
   </div>

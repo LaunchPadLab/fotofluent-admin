@@ -27,11 +27,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :pronunciation %>
-    <%= form.text_area :pronunciation, id: :word_pronunciation %>
-  </div>
-
-  <div class="field">
     <p><strong>Translations</strong></p>
     <%= form.fields_for :translations do |translation| %>
       <%= render 'translation_fields', f: translation %>

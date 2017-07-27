@@ -4,7 +4,17 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.order("RANDOM()").limit(10).includes(:language, :word)
+    if params[:lang].present?
+      @translations = Translation
+        .includes(:language, :word)
+        .where(languages: { language_key: params[:lang] })
+        .order("RANDOM()").limit(10)
+    else 
+      @translations = Translation
+        .includes(:language)
+        .where(languages: { language_key: 'GER' })
+        .order("RANDOM()").limit(10)
+    end
   end
 
   # GET /translations/1

@@ -1,8 +1,6 @@
 class TranslationsController < ApplicationController
   before_action :set_translation, only: [:show, :edit, :update, :destroy]
 
-  # GET /translations
-  # GET /translations.json
   def index
     if params[:lang].present?
       @translations = Translation
@@ -17,22 +15,16 @@ class TranslationsController < ApplicationController
     end
   end
 
-  # GET /translations/1
-  # GET /translations/1.json
   def show
   end
 
-  # GET /translations/new
   def new
     @translation = Translation.new
   end
 
-  # GET /translations/1/edit
   def edit
   end
 
-  # POST /translations
-  # POST /translations.json
   def create
     @translation = Translation.new(translation_params)
 
@@ -47,8 +39,6 @@ class TranslationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /translations/1
-  # PATCH/PUT /translations/1.json
   def update
     respond_to do |format|
       if @translation.update(translation_params)
@@ -61,8 +51,6 @@ class TranslationsController < ApplicationController
     end
   end
 
-  # DELETE /translations/1
-  # DELETE /translations/1.json
   def destroy
     @translation.destroy
     respond_to do |format|
@@ -72,12 +60,10 @@ class TranslationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_translation
       @translation = Translation.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def translation_params
       params.require(:translation).permit(:foreign_word, :foreign_pronunciation, :word_id, :language_id)
     end

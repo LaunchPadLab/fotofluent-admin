@@ -5,5 +5,20 @@
   <%= @language.name %>
 </p>
 
+<p>
+  <strong>Language Key:</strong>
+  <%= @language.language_key %>
+</p>
+
+<p>
+  <strong>Chrome Text-to-Speech Language Key:</strong>
+  <%= @language.tts_key %>
+</p>
+
+<p>
+  <strong>Flag Icon:</strong>
+  <%= image_tag @language.flag.url %>
+</p>
+
 <%= link_to 'Edit', edit_language_path(@language) %> |
 <%= link_to 'Back', languages_path %>

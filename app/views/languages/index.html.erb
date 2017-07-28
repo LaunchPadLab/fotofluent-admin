@@ -12,6 +12,7 @@
     <tr>
       <th>Name</th>
       <th>Key</th>
+      <th>Chrome TTS Key</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
       <tr>
         <td><%= language.name %></td>
         <td><%= language.language_key %></td>
+        <td><%= language.tts_key %></td>
         <td><%= link_to 'Show', language %></td>
         <td><%= link_to 'Edit', edit_language_path(language) %></td>
         <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>

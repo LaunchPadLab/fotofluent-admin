@@ -21,6 +21,11 @@
     <%= form.text_field :language_key, id: :language_language_key %>
   </div>
 
+  <div class="field">
+    <%= form.label :flag %>
+    <%= form.file_field :flag, id: :language_flag %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

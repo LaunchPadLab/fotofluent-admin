@@ -5,12 +5,12 @@ class TranslationsController < ApplicationController
     if params[:lang].present?
       @translations = Translation
         .includes(:language, :word)
-        .where(languages: { language_key: params[:lang] })
+        .where(languages: { tts_key: params[:lang] })
         .order("RANDOM()").limit(10)
     else 
       @translations = Translation
         .includes(:language)
-        .where(languages: { language_key: 'GER' })
+        .where(languages: { tts_key: 'de-DE' })
         .order("RANDOM()").limit(10)
     end
   end

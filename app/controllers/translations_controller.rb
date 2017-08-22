@@ -6,12 +6,16 @@ class TranslationsController < ApplicationController
       @translations = Translation
         .includes(:language, :word)
         .where(languages: { tts_key: params[:lang] })
-        .order("RANDOM()").limit(10)
+        .where('words.image LIKE ?', '%unsplash.com%')
+        .references(:words)
+        .order("RANDOM()").limit(5)
     else 
       @translations = Translation
-        .includes(:language)
+        .includes(:language, :word)
         .where(languages: { tts_key: 'de-DE' })
-        .order("RANDOM()").limit(10)
+        .where('words.image LIKE ?', '%unsplash.com%')
+        .references(:words)
+        .order("RANDOM()").limit(20)
     end
   end
 

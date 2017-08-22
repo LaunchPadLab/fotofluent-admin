@@ -15,7 +15,7 @@ class TranslationsController < ApplicationController
         .where(languages: { tts_key: 'de-DE' })
         .where('words.image LIKE ?', '%unsplash.com%')
         .references(:words)
-        .order("RANDOM()").limit(20)
+        .order("RANDOM()").limit(5)
     end
   end
 

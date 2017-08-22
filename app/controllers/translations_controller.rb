@@ -3,19 +3,9 @@ class TranslationsController < ApplicationController
 
   def index
     if params[:lang].present?
-      @translations = Translation
-        .includes(:language, :word)
-        .where(languages: { tts_key: params[:lang] })
-        .where('words.image LIKE ?', '%unsplash.com%')
-        .references(:words)
-        .order("RANDOM()").limit(5)
+      @translations = Translation.from_unsplash.for_language(params[:lang]).order("RANDOM()").limit(20)
     else 
-      @translations = Translation
-        .includes(:language, :word)
-        .where(languages: { tts_key: 'de-DE' })
-        .where('words.image LIKE ?', '%unsplash.com%')
-        .references(:words)
-        .order("RANDOM()").limit(5)
+      @translations = Translation.from_unsplash.for_language('de-DE').order("RANDOM()").limit(20)
     end
   end
 

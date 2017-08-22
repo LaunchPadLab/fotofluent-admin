@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= link_to 'Words', words_path %></h1>
-
 <div>
   <h3>Search Words</h3>
   <div>
     <%= form_tag words_path, method: :get do %>
       <%= text_field_tag 'term', params[:term], placeholder: "Search for word or grouping" %>
       <%= submit_tag 'Search!' %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form_tag words_path, method: :get do %>
+      <%= hidden_field_tag :photo_source, 'unsplash' %>
+      <%= submit_tag 'Words with Non-Unsplash Images' %>
     <% end %>
   </div>
 </div>

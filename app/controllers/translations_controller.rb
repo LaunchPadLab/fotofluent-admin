@@ -1,11 +1,12 @@
 class TranslationsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_translation, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:lang].present?
-      @translations = Translation.from_unsplash.for_language(params[:lang]).order("RANDOM()").limit(5)
+      @translations = Translation.from_unsplash.for_language(params[:lang]).order("RANDOM()").limit(1)
     else 
-      @translations = Translation.from_unsplash.for_language('de-DE').order("RANDOM()").limit(5)
+      @translations = Translation.from_unsplash.for_language('de-DE').order("RANDOM()").limit(1)
     end
   end
 

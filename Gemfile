@@ -21,6 +21,7 @@ gem 'pg_search'
 gem 'carrierwave-aws'
 gem 'mini_magick'
 gem 'figaro'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

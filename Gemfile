@@ -22,6 +22,7 @@ gem 'carrierwave-aws'
 gem 'mini_magick'
 gem 'figaro'
 gem 'devise'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

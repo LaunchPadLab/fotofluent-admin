@@ -6,7 +6,7 @@ class WordsController < ApplicationController
     if params[:term].present?
       @words = Word.search_by_word(params[:term]).order(id: :desc).page params[:page]
     elsif params[:photo_source].present?
-      @words = Word.from_unsplash.order(id: :desc).page params[:page]
+      @words = Word.not_unsplash.order(id: :desc).page params[:page]
     else 
       @words = Word.order(id: :desc).page params[:page]
     end

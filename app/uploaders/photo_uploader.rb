@@ -24,7 +24,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    model.optimized_image
+    'http://via.placeholder.com/1920x1080'
   end
 
   # Process files as they are uploaded:

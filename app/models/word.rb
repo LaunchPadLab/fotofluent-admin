@@ -1,4 +1,5 @@
 class Word < ApplicationRecord
+  mount_uploader :image, ImageUploader
   include PgSearch
   has_many :translations, inverse_of: :word, dependent: :destroy
   has_many :languages, through: :translations
@@ -10,4 +11,9 @@ class Word < ApplicationRecord
       }
     }
   paginates_per 10
+
+  def optimized_image
+    return image_link unless image.url.present?
+    image.try(:optimized).try(:url)
+  end
 end

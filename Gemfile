@@ -19,6 +19,7 @@ gem "jquery-rails"
 gem 'kaminari'
 gem 'pg_search'
 gem 'carrierwave-aws'
+gem 'carrierwave-imageoptimizer'
 gem 'mini_magick'
 gem 'figaro'
 gem 'devise'
@@ -26,7 +27,8 @@ gem 'httparty'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "bullet"
+  gem 'bullet'
+  gem 'pry-rails'
 end
 
 group :development do

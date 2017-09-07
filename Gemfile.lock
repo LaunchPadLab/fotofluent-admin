@@ -61,7 +61,11 @@ GEM
     carrierwave-aws (1.1.0)
       aws-sdk (~> 2.0)
       carrierwave (>= 0.7, < 2.0)
+    carrierwave-imageoptimizer (1.4.0)
+      carrierwave (>= 0.8, < 2.0)
+      image_optimizer (~> 1.6)
     cocoon (1.2.10)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -86,6 +90,7 @@ GEM
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
     i18n (0.8.4)
+    image_optimizer (1.7.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -132,6 +137,12 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
       arel (>= 6)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -177,6 +188,7 @@ GEM
     seed_dump (3.2.4)
       activerecord (>= 4)
       activesupport (>= 4)
+    slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -218,6 +230,7 @@ DEPENDENCIES
   bullet
   byebug
   carrierwave-aws
+  carrierwave-imageoptimizer
   cocoon
   coffee-rails (~> 4.2)
   devise
@@ -230,6 +243,7 @@ DEPENDENCIES
   mini_magick
   pg (~> 0.18)
   pg_search
+  pry-rails
   puma (~> 3.7)
   rails (~> 5.1.2)
   sass-rails (~> 5.0)

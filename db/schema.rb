@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828004148) do
+ActiveRecord::Schema.define(version: 20170907045535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,11 +56,12 @@ ActiveRecord::Schema.define(version: 20170828004148) do
 
   create_table "words", force: :cascade do |t|
     t.string "word"
-    t.text "image"
+    t.text "image_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "grouping"
     t.string "pronunciation"
+    t.text "image"
   end
 
   add_foreign_key "translations", "languages"

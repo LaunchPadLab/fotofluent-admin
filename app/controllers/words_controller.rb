@@ -62,6 +62,6 @@ class WordsController < ApplicationController
     end
 
     def word_params
-      params.require(:word).permit(:word, :image, :grouping, :pronunciation, translations_attributes: [:id, :foreign_word, :foreign_pronunciation, :image_link, :language_id, :_destroy])
+      params.require(:word).permit(:word, :image, :grouping, :pronunciation, translations_attributes: [:id, :foreign_word, :foreign_pronunciation, :photo, :language_id, :_destroy])
     end
 end

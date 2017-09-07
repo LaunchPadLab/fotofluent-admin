@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_filed :photo, id: :word_photo %>
+  </div>
+
+  <div class="field">
     <%= form.label :grouping %>
     <%= form.text_area :grouping, id: :word_grouping %>
   </div>

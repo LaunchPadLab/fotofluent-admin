@@ -56,12 +56,12 @@ ActiveRecord::Schema.define(version: 20170907045535) do
 
   create_table "words", force: :cascade do |t|
     t.string "word"
-    t.text "image_link"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "grouping"
     t.string "pronunciation"
-    t.text "image"
+    t.text "photo"
   end
 
   add_foreign_key "translations", "languages"

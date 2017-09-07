@@ -1,6 +1,7 @@
 class Word < ApplicationRecord
-  mount_uploader :image, ImageUploader
+  mount_uploader :photo, PhotoUploader
   include PgSearch
+  after_destroy :delete_photo
   has_many :translations, inverse_of: :word, dependent: :destroy
   has_many :languages, through: :translations
   accepts_nested_attributes_for :translations, reject_if: :all_blank, allow_destroy: true
@@ -12,8 +13,12 @@ class Word < ApplicationRecord
     }
   paginates_per 10
 
+  def delete_photo
+    remove_photo!
+  end
+
   def optimized_image
-    return image_link unless image.url.present?
-    image.try(:optimized).try(:url)
+    return image unless photo.url.present?
+    photo.try(:optimized).try(:url)
   end
 end

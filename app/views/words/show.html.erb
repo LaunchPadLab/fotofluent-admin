@@ -12,7 +12,13 @@
 <p>
   <strong>Image:</strong>
   <br>
-  <%= image_tag @word.image, width: 100 %>
+  <%= image_tag @word.image.url, width: 100 %>
+</p>
+
+<p>
+  <strong>Image Link:</strong>
+  <br>
+  <%= @word.image_link %>
 </p>
 
 <p>

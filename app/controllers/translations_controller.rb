@@ -4,9 +4,9 @@ class TranslationsController < ApplicationController
 
   def index
     if params[:lang].present?
-      @translations = Translation.for_language(params[:lang]).order("RANDOM()").limit(1)
+      @translations = Translation.from_unsplash.for_language(params[:lang]).order("RANDOM()").limit(1)
     else 
-      @translations = Translation.for_language('de-DE').order("RANDOM()").limit(1)
+      @translations = Translation.from_unsplash.for_language('de-DE').order("RANDOM()").limit(1)
     end
   end
 

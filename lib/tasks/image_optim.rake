@@ -1,6 +1,6 @@
 namespace :images do
   desc 'Optimize image urls with imageoptim'
-  task optimize: :environment do
+  task image_optim: :environment do
     Word.in_batches(of: 15).each_record do |word|
       url = "https://img.gs/#{ENV['IMAGE_OPTIM_USERNAME']}/1600x900,fit/#{word.image}"
       HTTParty.get(url)

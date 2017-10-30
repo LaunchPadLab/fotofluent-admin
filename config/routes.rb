@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   resources :translations
   resources :languages
   resources :words
+
+  namespace :api do
+    namespace :v1 do
+      resources :translations, only: [:index]
+    end
+  end
 end

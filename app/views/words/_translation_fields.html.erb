@@ -6,16 +6,19 @@
     <%= f.label :language_id %>
     <%= f.collection_select :language_id, Language.all, :id, :name %>
   </div>
+
   <br>
 
   <div>
     <%= f.check_box :_destroy %>
     <%= f.label 'Check To Delete Translation' %>
   </div>
+  
   <br>
   
   <div>
     <%= link_to_remove_association "Cancel New Translation", f %>
   </div>
+
   <br>
 </div>

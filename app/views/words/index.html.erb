@@ -1,5 +1,6 @@
 <div>
   <h3>Search Words</h3>
+  
   <div>
     <%= form_tag words_path, method: :get do %>
       <%= text_field_tag 'term', params[:term], placeholder: "Search for word or grouping" %>
@@ -16,6 +17,7 @@
     <% end %>
   </div>
 </div>
+
 <br>
 
 <div>

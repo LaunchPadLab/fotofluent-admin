@@ -3,15 +3,14 @@ class TranslationService
 
   DEFAULT_LANGUAGE = 'de-DE'
   DEFAULT_LIMIT = 1
-  DEFAULT_GROUPING = nil
 
   def initialize(args={})
     @language_code = args.fetch(:language_code, DEFAULT_LANGUAGE)
-    @grouping = args.fetch(:grouping, DEFAULT_GROUPING)
+    @grouping = args.fetch(:grouping, nil)
     @limit = args.fetch(:limit, DEFAULT_LIMIT)
   end
 
-  def translations
+  def filtered_translations
     Translation
       .from_unsplash
       .for_language(language_code)

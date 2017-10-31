@@ -2,7 +2,7 @@ class Api::V1::TranslationsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    json_with translation_service.translations
+    json_with translation_service.filtered_translations
   end
 
   private

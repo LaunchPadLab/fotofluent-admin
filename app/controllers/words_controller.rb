@@ -3,13 +3,7 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:term].present?
-      @words = Word.search_by_word(params[:term]).order(id: :desc).page params[:page]
-    elsif params[:photo_src]
-      @words = Word.not_unsplash.order(id: :desc).page params[:page]
-    else 
-      @words = Word.order(id: :desc).page params[:page]
-    end
+    @words = word_service.filtered_words
   end
 
   def show
@@ -49,6 +43,14 @@ class WordsController < ApplicationController
 
   def set_word
     @word = Word.find(params[:id])
+  end
+
+  def word_service
+    @word_service ||= WordService.new(word_service_params)
+  end
+
+  def word_service_params
+    @word_service_params ||= WordServiceDecanter.decant(params)
   end
 
   def word_params

@@ -3,7 +3,7 @@ class TranslationsController < ApplicationController
   before_action :set_translation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @translations = translation_service.translations
+    @translations = translation_service.filtered_translations
   end
 
   def show
@@ -46,7 +46,7 @@ class TranslationsController < ApplicationController
   end
 
   def translation_service
-    TranslationService.new(translation_service_params)
+    @translation_service ||= TranslationService.new(translation_service_params)
   end
 
   def translation_service_params

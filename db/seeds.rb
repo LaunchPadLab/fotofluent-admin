@@ -1,8 +1,8 @@
 Language.create!([
-  {name: "French", language_key: "FRA", flag: "france.png", tts_key: "fr-FR"},
-  {name: "German", language_key: "GER", flag: "germany.png", tts_key: "de-DE"},
-  {name: "Spanish", language_key: "SPA", flag: "spain.png", tts_key: "es-ES"},
-  {name: "Italian", language_key: "ITA", flag: "italy.png", tts_key: "it-IT"}
+  {name: "French", language_key: "FRA", flag: "france.png", language_code: "fr-FR"},
+  {name: "German", language_key: "GER", flag: "germany.png", language_code: "de-DE"},
+  {name: "Spanish", language_key: "SPA", flag: "spain.png", language_code: "es-ES"},
+  {name: "Italian", language_key: "ITA", flag: "italy.png", language_code: "it-IT"}
 ])
 Translation.create!([
   {foreign_word: "Rücken", foreign_pronunciation: nil, word_id: 3, language_id: 5},

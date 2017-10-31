@@ -3,11 +3,7 @@ class TranslationsController < ApplicationController
   before_action :set_translation, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:lang].present?
-      @translations = Translation.from_unsplash.for_language(params[:lang]).order("RANDOM()").limit(1)
-    else 
-      @translations = Translation.from_unsplash.for_language('de-DE').order("RANDOM()").limit(1)
-    end
+    @translations = translation_service.translations
   end
 
   def show
@@ -23,43 +19,41 @@ class TranslationsController < ApplicationController
   def create
     @translation = Translation.new(translation_params)
 
-    respond_to do |format|
-      if @translation.save
-        format.html { redirect_to @translation, notice: 'Translation was successfully created.' }
-        format.json { render :show, status: :created, location: @translation }
-      else
-        format.html { render :new }
-        format.json { render json: @translation.errors, status: :unprocessable_entity }
-      end
+    if @translation.save
+      redirect_to @translation, notice: 'Translation was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @translation.update(translation_params)
-        format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @translation }
-      else
-        format.html { render :edit }
-        format.json { render json: @translation.errors, status: :unprocessable_entity }
-      end
+    if @translation.update(translation_params)
+      redirect_to @translation, notice: 'Translation was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @translation.destroy
-    respond_to do |format|
-      format.html { redirect_to translations_url, notice: 'Translation was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to translations_url, notice: 'Translation was successfully destroyed.'
   end
 
   private
-    def set_translation
-      @translation = Translation.find(params[:id])
-    end
 
-    def translation_params
-      params.require(:translation).permit(:foreign_word, :foreign_pronunciation, :word_id, :language_id)
-    end
+  def set_translation
+    @translation = Translation.find(params[:id])
+  end
+
+  def translation_service
+    TranslationService.new(translation_service_params)
+  end
+
+  def translation_service_params
+    @translation_service_params ||= TranslationServiceDecanter.decant(params)
+  end
+
+  def translation_params
+    params.require(:translation).permit(:foreign_word, :foreign_pronunciation, :word_id, :language_id)
+  end
 end

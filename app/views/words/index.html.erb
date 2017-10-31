@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div>
   <h3>Search Words</h3>
   <div>
@@ -13,7 +11,7 @@
 
   <div>
     <%= form_tag words_path, method: :get do %>
-      <%= hidden_field_tag :photo_source, 'unsplash' %>
+      <%= hidden_field_tag :photo_src, 'not_unsplash' %>
       <%= submit_tag 'Words with Non-Unsplash Images' %>
     <% end %>
   </div>

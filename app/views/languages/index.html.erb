@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Languages</h1>
 
 <div>
@@ -22,7 +20,7 @@
       <tr>
         <td><%= language.name %></td>
         <td><%= language.language_key %></td>
-        <td><%= language.tts_key %></td>
+        <td><%= language.language_code %></td>
         <td><%= link_to 'Show', language %></td>
         <td><%= link_to 'Edit', edit_language_path(language) %></td>
         <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>

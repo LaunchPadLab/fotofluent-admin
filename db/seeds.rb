@@ -1,3 +1,5 @@
+User.create(email: 'user@example.com', password: 'password', password_confirmation: 'password')
+
 Language.create!([
   {name: 'French', language_key: 'FRA', flag: 'france.png', language_code: 'fr-FR'},
   {name: 'German', language_key: 'GER', flag: 'germany.png', language_code: 'de-DE'},

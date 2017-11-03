@@ -57,9 +57,9 @@ class WordsController < ApplicationController
     params.require(:word).permit(
       :word, 
       :image, 
+      :photo,
       :grouping, 
       :pronunciation, 
-      :photo,
       translations_attributes: [
         :id, 
         :foreign_word, 

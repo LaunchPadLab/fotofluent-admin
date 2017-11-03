@@ -36,3 +36,5 @@ class Word < ApplicationRecord
     self.remote_photo_url = self.image
   end
 end
+
+

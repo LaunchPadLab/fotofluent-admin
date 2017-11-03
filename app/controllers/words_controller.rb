@@ -59,11 +59,11 @@ class WordsController < ApplicationController
       :image, 
       :grouping, 
       :pronunciation, 
+      :photo,
       translations_attributes: [
         :id, 
         :foreign_word, 
         :foreign_pronunciation, 
-        :photo, 
         :language_id, 
         :_destroy
       ]

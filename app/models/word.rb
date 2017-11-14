@@ -12,7 +12,7 @@ class Word < ApplicationRecord
   has_many :languages, through: :translations
   
   accepts_nested_attributes_for :translations, reject_if: :all_blank, allow_destroy: true
-  before_save :set_word_image
+  before_save :set_word_image, :downcase_grouping
   after_destroy :delete_photo
   
   # mount uploader must come AFTER before_save callback
@@ -34,6 +34,10 @@ class Word < ApplicationRecord
 
   def use_image_link
     self.remote_photo_url = self.image
+  end
+
+  def downcase_grouping
+    self.grouping = self.grouping.try(:downcase)
   end
 end
 
